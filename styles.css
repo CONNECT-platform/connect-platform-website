@@ -127,24 +127,65 @@ section.dark {
 /******** video styles ********/
 
 .video-wrapper {
-	position: fixed;
-  width: 60vw;
-  left: 20vw;
-  top: 32px;
+	position: absolute;
+  top: 0;
+  width: 100vw;
   margin: 0 auto;
-	padding-bottom: 32.4%; /* 16:9 */
+	padding-bottom: 56.25%; /* 16:9 */
 	padding-top: 25px;
 	height: 0;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .5);
+  background: #212121;
+  opacity: 0;
+  z-index: -1;
 }
+
 .video-wrapper iframe {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+.video-wrapper .loading .drip {
+  position: absolute;
+  width: 16px; height: 16px;
+  border-radius: 16px;
+  background: #bdbdbd;
+  left: 50%; margin-left: -4px;
+  top: 50%; margin-top: -4px;
+  animation: loading-drip 2s infinite;
+}
+
+.video-wrapper .loading .circle {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  border: 4px solid #bdbdbd;
+  left: 50%; margin-left: -16px;
+  top: 50%; margin-top: -16px;
+  opacity: 1;
+  animation: loading-circle 2s infinite;
+}
+
+@keyframes loading-drip {
+  0% { transform: translateY(-64px) scale(0); }
+  10% { transform: translateY(-64px) scale(1); }
+  70% { transform: translateY(0px); opacity: 1; }
+  90% { transform: scale(4); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes loading-circle {
+  55% { transform: scale(1); }
+  65% { transform: scaleX(1.15) scaleY(.85); }
+  80% { transform: scaleX(1); }
+  90% { transform: scale(1.25); }
+  100% { transform: scale(1); }
 }
 
 /******** specific styles ********/
@@ -182,6 +223,8 @@ img.logo-carved {
   top: 50vh;
   margin-left: -75vmax;
   margin-top: -75vmax;
+  opacity: 0;
+  transform: scale(0);
 }
 
 .scroll {

@@ -10,8 +10,8 @@
 </head>
 <body>
   <div class="backdrop" data-gleit='{
-    "490vh": {"translateX": "0vw"},
-    "500vh": {"translateX": "50vw"}
+    "350vh": {"translateX": "0vw"},
+    "400vh": {"translateX": "50vw"}
   }'>
     <div class="circle" data-gleit='{
       "0vh": {"opacity": 0},
@@ -50,22 +50,20 @@
   }'>
     <div>
       <div class="video-wrapper" data-gleit='{
-        "50vh": {"opacity": 0, "translateX": "100vw"},
-        "100vh": {"opacity": 1, "translateX": "0vw"},
-        "140vh": {"translateX": "0vw"},
-        "200vh": {"translateX": "-120vw"}
+        "80vh": {"opacity": 0},
+        "90vh": {"opacity": 1},
+        "170vh": {"opacity": 0}
       }'>
+        <div class="loading"><div class="drip"></div><div class="circle"></div></div>
         <!-- TODO: make the proper video and link it -->
-        <iframe width="480" height="276"
-          src="https://www.youtube-nocookie.com/embed/zv5mmOAf4Gg?color=white&rel=0&showinfo=1&controls=0&mute=1"
-          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe width="480" height="276" id="video1" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
       <br>
       <h3>EXAMPLE: creating a simple password-based authentication backend</h3>
       <br>
       <div class="scroll">
         <img class="line" src="scroll-line.svg"/>
-        <img class="mouse" src="scroll-mouse-dark.svg"/>
+        <img class="mouse" src="scroll-mouse-really-dark.svg"/>
       </div>
     </div>
   </section>
@@ -73,20 +71,41 @@
   <section class="dark">
     <div>
       <div class="video-wrapper" data-gleit='{
-        "140vh": {"opacity": 0, "translateX": "100vw"},
-        "200vh": {"opacity": 1, "translateX": "0vw"}
+        "180vh": {"opacity": 0},
+        "190vh": {"opacity": 1},
+        "270vh": {"opacity": 0}
       }'>
+        <div class="loading"><div class="drip"></div><div class="circle"></div></div>
         <!-- TODO: make the proper video and link it -->
-        <iframe width="480" height="276"
-          src="https://www.youtube-nocookie.com/embed/zv5mmOAf4Gg?color=white&rel=0&showinfo=1&controls=0&mute=1"
-          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe width="480" height="276" id="video2" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
       <br>
-      <h3>EXAMPLE: creating a simple password-based authentication backend</h3>
+      <h3>EXAMPLE: debugging code visually in CONNECT platform</h3>
       <br>
       <div class="scroll">
         <img class="line" src="scroll-line.svg"/>
-        <img class="mouse" src="scroll-mouse-dark.svg"/>
+        <img class="mouse" src="scroll-mouse-really-dark.svg"/>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div>
+      <div class="video-wrapper" data-gleit='{
+        "280vh": {"opacity": 0},
+        "290vh": {"opacity": 1},
+        "370vh": {"opacity": 0}
+      }'>
+        <div class="loading"><div class="drip"></div><div class="circle"></div></div>
+        <!-- TODO: make the proper video and link it -->
+        <iframe width="480" height="276" id="video3" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <br>
+      <h3>EXAMPLE: inline coding in CONNECT platform</h3>
+      <br>
+      <div class="scroll">
+        <img class="line" src="scroll-line.svg"/>
+        <img class="mouse" src="scroll-mouse-really-dark.svg"/>
       </div>
     </div>
   </section>
@@ -127,8 +146,37 @@
   </div>
 
   <script>
-    window.addEventListener('load', function() {
+    function onload() {
       gleit.animate().on(gleit.verticalScroll());
-    });
+    }
+
+    if (window.addEventListener) window.addEventListener('load', onload);
+    else if (window.attachEvent) window.attachEvent('onload', onload);
+
+    var videoUrls = {
+      video1: 'https://www.youtube-nocookie.com/embed/zv5mmOAf4Gg?color=white&rel=0&showinfo=1&controls=0&mute=1&loop=1',
+      video2: 'https://www.youtube-nocookie.com/embed/zv5mmOAf4Gg?color=white&rel=0&showinfo=1&controls=0&mute=1&loop=1',
+      video3: 'https://www.youtube-nocookie.com/embed/zv5mmOAf4Gg?color=white&rel=0&showinfo=1&controls=0&mute=1&loop=1'
+    }
+
+    function loadVideo(id) {
+      if (videoUrls[id]) {
+        var frame = document.getElementById(id);
+        if (frame) {
+          if (-1 == navigator.userAgent.indexOf("MSIE")) {
+            frame.src = videoUrls[id];
+          }
+          else {
+            frame.location = videoUrls[id];
+          }
+        }
+      }
+    };
+
+    setTimeout(function() {
+      loadVideo('video1');
+      loadVideo('video2');
+      loadVideo('video3');
+    }, 5);
   </script>
 </body>
