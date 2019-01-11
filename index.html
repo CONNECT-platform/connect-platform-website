@@ -1,0 +1,96 @@
+<!doctype html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <script src="https://unpkg.com/gleit"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+
+</head>
+<body>
+  <div class="backdrop" data-gleit='{
+    "190vh": {"translateX": "0vw"},
+    "200vh": {"translateX": "50vw"}
+  }'>
+    <div class="circle" data-gleit='{
+      "0vh": {"opacity": 0},
+      "65vh": {"scale": 0},
+      "80vh": {"scale": 1, "opacity": 1}
+    }'></div>
+  </div>
+
+  <section>
+    <img class="logo-carved"  src="logo.svg" data-gleit='{
+      "0vh": {"scale": 1},
+      "78vh": {"opacity": 1, "scale": 5},
+      "80vh": {"opacity": 0 }
+    }'/>
+    <div>
+      <h1>Serverless Visual Backend Development</h1>
+      <h2>[for developers]</h2>
+      <p>
+        Create server-less logical microservices intuitively and efficiently, without compromising the fine control you would get with traditional coding. Become faster, less error-prone and more focused.
+      </p>
+      <br>
+      <div class="scroll">
+        <img class="line" src="scroll-line.svg"/>
+        <img class="mouse" src="scroll-mouse.svg"/>
+      </div>
+      <br>
+      <a class="button">Start Now</a>
+    </div>
+  </section>
+
+  <section class="dark" id="section2" data-gleit='{
+    "86vh": {"opacity": 0},
+    "100vh": {"opacity": 1}
+  }'>
+    <div>
+      <h1>Some Examples</h1>
+      <p>and some other stuff</p>
+      <a class="button">Start Now</a>
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <a class="button">Learn More</a>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div class="texts">
+      <div class="link"><a href="www.google.com" target="_blank">Docs</a></div>
+      <div class="separator"></div>
+      <div class="link"><a href="www.google.com" target="_blank">GitHub</a></div>
+      <div class="separator"></div>
+      <div class="link"><a href="www.google.com" target="_blank">Docker</a></div>
+      <div class="separator"></div>
+      <div class="link"><a href="www.google.com" target="_blank">Npm</a></div>
+    </div>
+    <div class="icons">
+      <a class="icon-link" href="www.google.com" target="_blank">
+        <img src="twitter.svg"/>
+      </a>
+      <a class="icon-link" href="www.google.com" target="_blank">
+        <img src="youtube.svg"/>
+      </a>
+      <a class="icon-link" href="www.google.com" target="_blank">
+        <img src="discord.svg"/>
+      </a>
+      <a class="icon-link" href="www.google.com" target="_blank">
+        <img src="linkedin.svg"/>
+      </a>
+      <a class="icon-link" href="www.google.com" target="_blank">
+        <img src="medium.svg"/>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      gleit.animate().on(gleit.verticalScroll());
+    });
+  </script>
+</body>

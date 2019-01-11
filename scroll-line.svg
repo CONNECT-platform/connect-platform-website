@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2px" height="40px" viewBox="0 0 2 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>line</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="first-page" transform="translate(-719.000000, -746.000000)" fill="#BDBDBD" fill-rule="nonzero">
+            <g id="scroll" transform="translate(710.000000, 744.000000)">
+                <rect id="line" x="9" y="2" width="2" height="40" rx="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
