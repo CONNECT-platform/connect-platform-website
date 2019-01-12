@@ -127,7 +127,7 @@ section.dark {
 /******** video styles ********/
 
 .video-wrapper {
-	position: absolute;
+	position: fixed;
   top: 0;
   width: 100vw;
   margin: 0 auto;
@@ -150,42 +150,22 @@ section.dark {
 	height: 100%;
 }
 
-.video-wrapper .loading .drip {
+.video-wrapper .loading {
   position: absolute;
-  width: 16px; height: 16px;
-  border-radius: 16px;
-  background: #bdbdbd;
-  left: 50%; margin-left: -4px;
-  top: 50%; margin-top: -4px;
-  animation: loading-drip 2s infinite;
+  top: 50%; left: 0; right: 0;
+  padding-top: 48px;
+  color: #bdbdbd;
+  animation: video-loading 3s infinite;
+  background-image: url('loading.gif');
+  background-size: 48px;
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 
-.video-wrapper .loading .circle {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  border-radius: 32px;
-  border: 4px solid #bdbdbd;
-  left: 50%; margin-left: -16px;
-  top: 50%; margin-top: -16px;
-  opacity: 1;
-  animation: loading-circle 2s infinite;
-}
-
-@keyframes loading-drip {
-  0% { transform: translateY(-64px) scale(0); }
-  10% { transform: translateY(-64px) scale(1); }
-  70% { transform: translateY(0px); opacity: 1; }
-  90% { transform: scale(4); opacity: 0; }
-  100% { opacity: 0; }
-}
-
-@keyframes loading-circle {
-  55% { transform: scale(1); }
-  65% { transform: scaleX(1.15) scaleY(.85); }
-  80% { transform: scaleX(1); }
-  90% { transform: scale(1.25); }
-  100% { transform: scale(1); }
+@keyframes video-loading {
+  0% { opacity: 0.5 }
+  50% { opacity: 1 }
+  100% { opacity: 0.5 }
 }
 
 /******** specific styles ********/
@@ -229,17 +209,20 @@ img.logo-carved {
 
 .scroll {
   position: relative;
+  height: 42px;
+  overflow: hidden;
   z-index: -1;
 }
 
-.scroll .mouse {
+.scroll img {
   position: absolute;
+  top: -14px;
   left: 50%;
-  margin-left: -10px;
-  animation: scroll-mouse 2s infinite;
+  margin-left: -8px;
+  animation: scroll 2s infinite;
 }
 
-@keyframes scroll-mouse {
+@keyframes scroll {
   0% { transform: translateY(0); }
   75% { transform: translateY(16px); }
   80% { transform: translateY(0); }
