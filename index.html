@@ -7,11 +7,14 @@
   <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
 
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 </head>
 <body>
   <div class="backdrop" data-gleit='{
     "310vh": {"translateX": "0vw"},
-    "330vh": {"translateX": "50vw"},
+    "350vh": {"translateX": "50vw"},
     "440vh": {"translateX": "50vw"},
     "480vh": {"translateX": "0vw"}
   }'>
@@ -121,7 +124,7 @@
         </p>
         <br><br>
         <img class="medium" src="text-code.svg" data-gleit='{
-          "380vh": {"opacity": 0, "scale": 0.75},
+          "350vh": {"opacity": 0, "scale": 0.85},
           "390vh": {"opacity": 1}
         }'/>
       </div>
@@ -134,7 +137,7 @@
         </p>
         <br><br>
         <img class="medium" src="visual-code.svg" data-gleit='{
-          "380vh": {"opacity": 0, "scale": 0.75},
+          "350vh": {"opacity": 0, "scale": 0.85},
           "390vh": {"opacity": 1}
         }'/>
       </div>
@@ -184,32 +187,7 @@
           "570vh": {"opacity": 0},
           "590vh": {"opacity": 1}
         }'>
-          <pre><code class="javascript">//
-// get the platform
-//
-const platform = require('connect-platform');
-
-//
-// add a node that outputs hellow to some dude
-//
-platform.node(
-  //
-  // so first the signature of the node.
-  //
-  {
-    path: '/my-package/hellow',
-    public: false,
-    inputs: ['dude'],
-    outputs: ['message'],
-  },
-
-  //
-  // then the functionality.
-  //
-  (inputs, output) => {
-    output('message', `hellow ${inputs.dude}!`);
-  }
-);</code></pre>
+          <pre><code class="javascript" id="code"></code></pre>
         </div>
       </div>
       <div class="wide close half right">
@@ -309,8 +287,92 @@ platform.node(
   </div>
 
   <script>
+    //hljs.initHighlightingOnLoad();
+
+    function animateCode() {
+      var lines = [
+          "//"
+        , "// get the platform"
+        , "//"
+        , "const platform = require('connect-platform');"
+        , ""
+        , "//"
+        , "// add a node that outputs hellow to some dude"
+        , "//"
+        , "platform.node("
+        , ""
+        , "  //"
+        , "  // so first the signature of the node."
+        , "  //"
+        , "  {"
+        , "    path: '/my-package/hellow',"
+        , "    public: false,"
+        , "    inputs: ['dude'],"
+        , "    outputs: ['message'],"
+        , "  },"
+        , ""
+        , "  //"
+        , "  // then the functionality."
+        , "  //"
+        , "  (inputs, output) => {"
+        , "    output('message', `hellow ${inputs.dude}!`);"
+        , "  }"
+        , ");"
+        ];
+      var code = lines.join('\n');
+
+      var el = document.getElementById('code');
+      var typed = "";
+      var waited = 0;
+      var wait = 0;
+
+      function animate() {
+        if (wait > waited) {
+          waited += 1;
+          return;
+        }
+
+        waited = 0;
+
+        if (typed.length >= code.length) {
+          if (wait == 100) {
+            wait = 0;
+            typed = "";
+          }
+          else wait = 100;
+        }
+        else {
+          var char = code[typed.length];
+          typed += char;
+
+          if (char == '\n') {
+            var ch = ' ';
+            while (true) {
+              ch = code[typed.length];
+              if (ch == ' ') typed += ch;
+              else break;
+            }
+
+            wait = 3;
+          }
+
+          else wait = 0;
+        }
+
+        el.innerHTML = typed + "<span class='cursor'></span>";
+
+        var typedLines = typed.split('\n').length;
+        for (var line = typedLines; line <= lines.length; line++)
+          el.innerHTML += '\n';
+        hljs.highlightBlock(el);
+      }
+
+      setInterval(animate, 70);
+    }
+
     function onload() {
       gleit.animate().on(gleit.verticalScroll());
+      animateCode();
     }
 
     if (window.addEventListener) window.addEventListener('load', onload);
