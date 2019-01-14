@@ -10,13 +10,18 @@
 </head>
 <body>
   <div class="backdrop" data-gleit='{
-    "350vh": {"translateX": "0vw"},
-    "400vh": {"translateX": "50vw"}
+    "310vh": {"translateX": "0vw"},
+    "330vh": {"translateX": "50vw"},
+    "440vh": {"translateX": "50vw"},
+    "480vh": {"translateX": "0vw"}
   }'>
     <div class="circle" data-gleit='{
       "0vh": {"opacity": 0},
       "65vh": {"scale": 0},
-      "80vh": {"scale": 1, "opacity": 1}
+      "80vh": {"scale": 1, "opacity": 1},
+      "600vh": {"scale": 1},
+      "630": {"opacity": 1},
+      "660vh": {"scale": 0, "opacity": 0}
     }'></div>
   </div>
 
@@ -47,9 +52,9 @@
   }'>
     <div>
       <div class="video-wrapper" data-gleit='{
-        "59vh": {"translateX": "100vw"},
-        "60vh": {"opacity": 0, "translateX": "0vw"},
-        "70vh": {"opacity": 1},
+        "84vh": {"translateX": "100vw"},
+        "85vh": {"opacity": 0, "translateX": "0vw"},
+        "90vh": {"opacity": 1},
         "120vh": {"opacity": 1},
         "140vh": {"opacity": 0}
       }'>
@@ -90,37 +95,199 @@
         "259vh": {"translateX": "100vw"},
         "260vh": {"opacity": 0, "translateX": "0vw"},
         "270vh": {"opacity": 1},
-        "320vh": {"opacity": 1},
-        "340vh": {"opacity": 0}
+        "310vh": {"opacity": 1},
+        "320vh": {"opacity": 0}
       }'>
         <div class="loading">loading the video ...</div>
         <!-- TODO: make the proper video and link it -->
         <iframe width="480" height="276" id="video3" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
       <br>
-      <h3>EXAMPLE: inline coding in CONNECT platform</h3>
+      <h3 data-gleit='{"310vh": {"opacity": 1}, "330vh": {"opacity": 0}}'>EXAMPLE: inline coding in CONNECT platform</h3>
       <br>
-      <div class="scroll"><img class="line" src="scroll.svg"/></div>
+      <div class="scroll" data-gleit='{"310vh": {"opacity": 1}, "335vh": {"opacity": 0}}'><img class="line" src="scroll.svg"/></div>
     </div>
   </section>
 
   <section>
     <div>
-      <div class="scroll"><img class="line" src="scroll.svg"/></div>
+      <div class="connector"></div>
+      <div class="half left">
+        <h1>Why</h1>
+        <br>
+        <p>
+          Because of the non-linear flow of asynchronous code, it inevitably tangles upon itself
+          when you represent it in a linear fashion, i.e. text-based representation:
+        </p>
+        <br><br>
+        <img class="medium" src="text-code.svg" data-gleit='{
+          "380vh": {"opacity": 0, "scale": 0.75},
+          "390vh": {"opacity": 1}
+        }'/>
+      </div>
+      <div class="half right dark">
+        <h1>Visual?</h1>
+        <br>
+        <p>
+          However, you can easily untangle that flow by simply presenting it on a graph,
+          which naturally results in a more intuitive and faster to work with form:
+        </p>
+        <br><br>
+        <img class="medium" src="visual-code.svg" data-gleit='{
+          "380vh": {"opacity": 0, "scale": 0.75},
+          "390vh": {"opacity": 1}
+        }'/>
+      </div>
       <br>
       <a class="button">Learn More</a>
     </div>
   </section>
 
+  <section class="dark">
+    <div>
+      <div class="d-n-s-hero" data-gleit='{
+        "460vh": {"opacity": 0, "scale": 0.8},
+        "480vh": {"opacity": 1}
+      }'>
+        <img src="d-n-s-shadow.svg"/>
+        <img class="laptop" src="laptop.svg" data-gleit='{
+          "460vh": {"translateY": "-156px"},
+          "500vh": {"translateY": "0px"}
+        }'/>
+        <img class="server" src="server.svg" data-gleit='{
+          "460vh": {"translateY": "-96px"},
+          "500vh": {"translateY": "0px"}
+        }'/>
+      </div>
+      <br><div class="spacer"></div><br>
+      <h1>Deploy & Scale Seamlessly</h1>
+      <br>
+      <p>
+        Our serverless platform allows you to focus on the logic of your micro-services while
+        CONNECT platform takes care of the rest.
+      </p>
+      <p class="small">
+         Alternatively, you can utilize our docker image to deploy anywhere from your own servers
+         to your laptop, you can utilize our boiler-plate project to create your own
+         CONNECT-based projects or even use our NPM package to merely attach CONNECT
+         to an existing Node.js service.
+      </p>
+      <div class="spacer"></div>
+      <a class="button">Start Now</a>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div>
+      <div class="wide close half left">
+        <div class="code" data-gleit='{
+          "570vh": {"opacity": 0},
+          "590vh": {"opacity": 1}
+        }'>
+          <pre><code class="javascript">//
+// get the platform
+//
+const platform = require('connect-platform');
+
+//
+// add a node that outputs hellow to some dude
+//
+platform.node(
+  //
+  // so first the signature of the node.
+  //
+  {
+    path: '/my-package/hellow',
+    public: false,
+    inputs: ['dude'],
+    outputs: ['message'],
+  },
+
+  //
+  // then the functionality.
+  //
+  (inputs, output) => {
+    output('message', `hellow ${inputs.dude}!`);
+  }
+);</code></pre>
+        </div>
+      </div>
+      <div class="wide close half right">
+        <h1>The Limit is Your Imagination</h1>
+        <br>
+        <p class="fade">
+          CONNECT is built on top of <b>Node.js</b>, and you can switch to coding in
+          Javascript at any point you find synchronous coding more convenient.
+        </p>
+        <p class="fade">
+          CONNECT's package manager also utilizes <b>NPM</b> under the hood, so you can use
+          any NPM package on your instances. You can easily create your own CONNECT packages
+          using our <a href="#" target="_blank">package boilerplate project on GitHub</a>, and re-use your
+          packages on your CONNECT instances, and maybe share them with your fellow community.
+        </p>
+        <p class="fade">
+          With this level of flexibility and technical freedom, you can practically build any
+          logical microservice that you could build with Node.js in a fraction of the time.
+          This is not just hyperbole: that is how
+          <b>we built the Platform as a Service (PaaS) for CONNECT utilizing CONNECT itself.</b>
+        </p>
+      </div>
+      <br><div class="spacer"></div><br>
+      <a class="button">Learn More</a>
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <img class="hero medium" src="interconnect.svg" data-gleit='{"660vh": {"opacity": 0}, "700vh": {"opacity": 1}}'/>
+      <br><div class="spacer"></div>
+      <h1>Inter-CONNECT Your Micro-Services</h1>
+      <br>
+      <p>
+        Utilize functionality of a CONNECT micro-service in another one just as
+        you would call a function of another package.
+        CONNECT makes inter-connecting your micro-services consistently effortless.
+      </p>
+      <p class="small">
+        Inter-CONNECT is not limited to micro-services built with CONNECT.
+        Any remote service complying with the INTERCONNECTIBILITY API spec
+        can be easily integrated into CONNECT platform.
+      </p>
+      <br><br>
+      <a class="button">Learn More</a>
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <img class="hero" src="map.svg" title="built in Munich, Germany"/>
+      <br><br>
+      <h1>Interested? Lets Have a Chat!</h1>
+      <br>
+      <p>
+        Join our Discord server, send us a message on Twitter,
+        create issues on GitHub
+        or simply drop us an email on info@connect-platform.com
+      </p>
+      <br><div class="spacer"></div><br>
+      <div>
+        <a class="button secondary">Join Discord</a>
+        <a class="button secondary">Try It Out</a>
+        <a class="button secondary">Read More</a>
+      </div>
+    </div>
+  </section>
+
+
   <div class="footer">
     <div class="texts">
+      <div class="link"><a href="www.google.com" target="_blank">Login</a></div>
+      <div class="separator"></div>
       <div class="link"><a href="www.google.com" target="_blank">Docs</a></div>
       <div class="separator"></div>
       <div class="link"><a href="www.google.com" target="_blank">GitHub</a></div>
       <div class="separator"></div>
       <div class="link"><a href="www.google.com" target="_blank">Docker</a></div>
-      <div class="separator"></div>
-      <div class="link"><a href="www.google.com" target="_blank">Npm</a></div>
     </div>
     <div class="icons">
       <a class="icon-link" href="www.google.com" target="_blank">
@@ -170,7 +337,7 @@
     };
 
     setTimeout(function() {
-  //    loadVideo('video1');
+      loadVideo('video1');
       loadVideo('video2');
       loadVideo('video3');
     }, 5);
