@@ -187,7 +187,33 @@
           "570vh": {"opacity": 0},
           "590vh": {"opacity": 1}
         }'>
-          <pre><code class="javascript" id="code"></code></pre>
+          <pre><code class="javascript" id="code">//
+// get the platform
+//
+const platform = require('connect-platform');
+
+//
+// add a node that outputs hellow to some dude
+//
+platform.node(
+
+  //
+  // so first the signature of the node.
+  //
+  {
+    path: '/my-package/hellow',
+    public: false,
+    inputs: ['dude'],
+    outputs: ['message'],
+  },
+
+  //
+  // then the functionality.
+  //
+  (inputs, output) => {
+    output('message', `hellow ${inputs.dude}!`);
+  }
+);</code></pre>
         </div>
       </div>
       <div class="wide close half right">
@@ -290,38 +316,9 @@
     //hljs.initHighlightingOnLoad();
 
     function animateCode() {
-      var lines = [
-          "//"
-        , "// get the platform"
-        , "//"
-        , "const platform = require('connect-platform');"
-        , ""
-        , "//"
-        , "// add a node that outputs hellow to some dude"
-        , "//"
-        , "platform.node("
-        , ""
-        , "  //"
-        , "  // so first the signature of the node."
-        , "  //"
-        , "  {"
-        , "    path: '/my-package/hellow',"
-        , "    public: false,"
-        , "    inputs: ['dude'],"
-        , "    outputs: ['message'],"
-        , "  },"
-        , ""
-        , "  //"
-        , "  // then the functionality."
-        , "  //"
-        , "  (inputs, output) => {"
-        , "    output('message', `hellow ${inputs.dude}!`);"
-        , "  }"
-        , ");"
-        ];
-      var code = lines.join('\n');
-
       var el = document.getElementById('code');
+      var code = el.textContent;
+      var lines = code.split('\n');
       var typed = "";
       var waited = 0;
       var wait = 0;
