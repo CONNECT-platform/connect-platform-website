@@ -353,10 +353,16 @@
               else break;
             }
 
-            wait = 3;
+            wait = Math.floor(Math.random() * Math.random() * 14) + 2;
           }
-
-          else wait = 0;
+          else {
+            if (char == ' ' || char == '(' || char == ')' || char == ':'
+                || char == '=' || char == '{' || char == '}' || char == '.'
+                || char == ',' || char == '[' || char == ']')
+              wait = Math.floor(Math.random() * Math.random() * Math.random() * 16);
+            else
+              wait = Math.floor(Math.random() * Math.random() * Math.random() * 4);
+          }
         }
 
         el.innerHTML = typed + "<span class='cursor'></span>";
@@ -367,7 +373,7 @@
         hljs.highlightBlock(el);
       }
 
-      setInterval(animate, 70);
+      setInterval(animate, 35);
     }
 
     function onload() {
