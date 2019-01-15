@@ -5,11 +5,20 @@
   <script src="https://unpkg.com/gleit"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+
   <link href="styles.css" rel="stylesheet">
+  <link href="css/generic.css" rel="stylesheet">
+  <link href="css/sections.css" rel="stylesheet">
+  <link href="css/buttons.css" rel="stylesheet">
+  <link href="css/codes.css" rel="stylesheet">
+  <link href="css/video.css" rel="stylesheet">
+  <link href="css/footer.css" rel="stylesheet">
 
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+  <script src="js/video.js"></script>
 </head>
 <body>
   <div class="backdrop" data-gleit='{
@@ -29,7 +38,7 @@
   </div>
 
   <section>
-    <img class="logo-carved"  src="logo.svg" data-gleit='{
+    <img class="logo-carved"  src="svg/logo.svg" data-gleit='{
       "0vh": {"scale": 1},
       "78vh": {"opacity": 1, "scale": 5},
       "80vh": {"opacity": 0 }
@@ -43,7 +52,7 @@
         Become faster, less error-prone and more focused.
       </p>
       <br>
-      <div class="scroll"><img class="line" src="scroll.svg"/></div>
+      <div class="scroll"><img class="line" src="svg/scroll.svg"/></div>
       <br>
       <a class="button">Start Now</a>
     </div>
@@ -68,7 +77,7 @@
       <br>
       <h3>EXAMPLE: creating a simple password-based authentication backend</h3>
       <br>
-      <div class="scroll"><img class="line" src="scroll.svg"/></div>
+      <div class="scroll"><img class="line" src="svg/scroll.svg"/></div>
     </div>
   </section>
 
@@ -88,7 +97,7 @@
       <br>
       <h3>EXAMPLE: debugging code visually in CONNECT platform</h3>
       <br>
-      <div class="scroll"><img class="line" src="scroll.svg"/></div>
+      <div class="scroll"><img class="line" src="svg/scroll.svg"/></div>
     </div>
   </section>
 
@@ -108,7 +117,7 @@
       <br>
       <h3 data-gleit='{"310vh": {"opacity": 1}, "330vh": {"opacity": 0}}'>EXAMPLE: inline coding in CONNECT platform</h3>
       <br>
-      <div class="scroll" data-gleit='{"310vh": {"opacity": 1}, "335vh": {"opacity": 0}}'><img class="line" src="scroll.svg"/></div>
+      <div class="scroll" data-gleit='{"310vh": {"opacity": 1}, "335vh": {"opacity": 0}}'><img class="line" src="svg/scroll.svg"/></div>
     </div>
   </section>
 
@@ -123,7 +132,7 @@
           when you represent it in a linear fashion, i.e. text-based representation:
         </p>
         <br><br>
-        <img class="medium" src="text-code.svg" data-gleit='{
+        <img class="medium" src="svg/text-code.svg" data-gleit='{
           "350vh": {"opacity": 0, "scale": 0.85},
           "390vh": {"opacity": 1}
         }'/>
@@ -136,7 +145,7 @@
           which naturally results in a more intuitive and faster to work with form:
         </p>
         <br><br>
-        <img class="medium" src="visual-code.svg" data-gleit='{
+        <img class="medium" src="svg/visual-code.svg" data-gleit='{
           "350vh": {"opacity": 0, "scale": 0.85},
           "390vh": {"opacity": 1}
         }'/>
@@ -152,12 +161,12 @@
         "460vh": {"opacity": 0, "scale": 0.8},
         "480vh": {"opacity": 1}
       }'>
-        <img src="d-n-s-shadow.svg"/>
-        <img class="laptop" src="laptop.svg" data-gleit='{
+        <img src="svg/d-n-s-shadow.svg"/>
+        <img class="laptop" src="svg/laptop.svg" data-gleit='{
           "460vh": {"translateY": "-156px"},
           "500vh": {"translateY": "0px"}
         }'/>
-        <img class="server" src="server.svg" data-gleit='{
+        <img class="server" src="svg/server.svg" data-gleit='{
           "460vh": {"translateY": "-96px"},
           "500vh": {"translateY": "0px"}
         }'/>
@@ -243,7 +252,7 @@ platform.node(
 
   <section>
     <div>
-      <img class="hero medium" src="interconnect.svg" data-gleit='{"660vh": {"opacity": 0}, "700vh": {"opacity": 1}}'/>
+      <img class="hero medium" src="svg/interconnect.svg" data-gleit='{"660vh": {"opacity": 0}, "700vh": {"opacity": 1}}'/>
       <br><div class="spacer"></div>
       <h1>Inter-CONNECT Your Micro-Services</h1>
       <br>
@@ -264,7 +273,7 @@ platform.node(
 
   <section>
     <div>
-      <img class="hero" src="map.svg" title="built in Munich, Germany"/>
+      <img class="hero" src="svg/map.svg" title="built in Munich, Germany"/>
       <br><br>
       <h1>Interested? Lets Have a Chat!</h1>
       <br>
@@ -295,26 +304,27 @@ platform.node(
     </div>
     <div class="icons">
       <a class="icon-link" href="www.google.com" target="_blank">
-        <img src="twitter.svg"/>
+        <img src="svg/twitter.svg"/>
       </a>
       <a class="icon-link" href="www.google.com" target="_blank">
-        <img src="youtube.svg"/>
+        <img src="svg/youtube.svg"/>
       </a>
       <a class="icon-link" href="www.google.com" target="_blank">
-        <img src="discord.svg"/>
+        <img src="svg/discord.svg"/>
       </a>
       <a class="icon-link" href="www.google.com" target="_blank">
-        <img src="linkedin.svg"/>
+        <img src="svg/linkedin.svg"/>
       </a>
       <a class="icon-link" href="www.google.com" target="_blank">
-        <img src="medium.svg"/>
+        <img src="svg/medium.svg"/>
       </a>
     </div>
   </div>
 
   <script>
-    //hljs.initHighlightingOnLoad();
-
+    //
+    // ---------- TODO: REMOVE THIS ----------
+    //
     function animateCode() {
       var el = document.getElementById('code');
       var code = el.textContent;
@@ -372,6 +382,9 @@ platform.node(
 
       setInterval(animate, 35);
     }
+    //
+    // ---------- END OF REMOVABLE SECTION ----------
+    //
 
     function onload() {
       gleit.animate().on(gleit.verticalScroll());
@@ -380,31 +393,5 @@ platform.node(
 
     if (window.addEventListener) window.addEventListener('load', onload);
     else if (window.attachEvent) window.attachEvent('onload', onload);
-
-    var videoUrls = {
-      video1: 'https://www.youtube-nocookie.com/embed/zv5mmOAf4Gg?color=white&rel=0&showinfo=1&controls=0&mute=1&loop=1',
-      video2: 'https://www.youtube-nocookie.com/embed/zv5mmOAf4Gg?color=white&rel=0&showinfo=1&controls=0&mute=1&loop=1',
-      video3: 'https://www.youtube-nocookie.com/embed/zv5mmOAf4Gg?color=white&rel=0&showinfo=1&controls=0&mute=1&loop=1'
-    }
-
-    function loadVideo(id) {
-      if (videoUrls[id]) {
-        var frame = document.getElementById(id);
-        if (frame) {
-          if (-1 == navigator.userAgent.indexOf("MSIE")) {
-            frame.src = videoUrls[id];
-          }
-          else {
-            frame.location = videoUrls[id];
-          }
-        }
-      }
-    };
-
-    setTimeout(function() {
-      loadVideo('video1');
-      loadVideo('video2');
-      loadVideo('video3');
-    }, 5);
   </script>
 </body>

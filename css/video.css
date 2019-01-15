@@ -1,0 +1,41 @@
+.video-wrapper {
+	position: fixed;
+  top: calc(25vh - 14.0625vw);
+  width: 100vw;
+  margin: 0 auto;
+	padding-bottom: 56.25vw; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .5);
+  background: #212121;
+  opacity: 0;
+  z-index: -1;
+}
+
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.video-wrapper .loading {
+  position: absolute;
+  top: 50%; left: 0; right: 0;
+  padding-top: 48px;
+  color: #bdbdbd;
+  animation: video-loading 3s infinite;
+  background-image: url('../gif/loading.gif');
+  background-size: 48px;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+@keyframes video-loading {
+  0% { opacity: 0.5 }
+  50% { opacity: 1 }
+  100% { opacity: 0.5 }
+}
