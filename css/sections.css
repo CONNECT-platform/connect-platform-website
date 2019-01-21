@@ -18,6 +18,7 @@ section:not(:first-child) {
 }
 
 section>div {
+  padding: 24px;
   padding-bottom: 170px;
   position: relative;
 }
@@ -56,6 +57,13 @@ body.tablet section.dark {
 
 .half.right {
   text-align: left;
+}
+
+body.mobile .half,
+body.tablet .half {
+  width: 100%;
+  margin: 0;
+  text-align: center;
 }
 
 .half img {

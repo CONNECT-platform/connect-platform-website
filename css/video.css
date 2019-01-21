@@ -13,6 +13,14 @@
   z-index: -1;
 }
 
+body.mobile .video-wrapper,
+body.tablet .video-wrapper {
+	position: relative;
+	opacity: 1;
+	margin: 0 -24px;
+	margin-bottom: 27.125vw;
+}
+
 .video-wrapper img {
 	opacity: 0;
 	transition: opacity .15s, box-shadow .15s;

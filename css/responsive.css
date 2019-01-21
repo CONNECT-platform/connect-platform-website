@@ -1,9 +1,10 @@
+.--responsive-marker { display: none; }
+.--responsive-marker::before { display: none; }
+
 /*
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
 */
-
-body::before { display: none; }
 
 @media (min-width: 1281px) {
   .no-desktop , .laptop-only,
@@ -12,7 +13,7 @@ body::before { display: none; }
     display: none !important;
   }
 
-  body::before { content: "desktop"; }
+  .--responsive-marker::before { content: "desktop"; }
 }
 
 /*
@@ -27,7 +28,7 @@ body::before { display: none; }
     display: none !important;
   }
 
-  body::before { content: "desktop, laptop"; }
+  .--responsive-marker::before { content: "desktop, laptop"; }
 }
 
 /*
@@ -42,7 +43,7 @@ body::before { display: none; }
     display: none !important;
   }
 
-  body::before { content: "tablet, tablet-portrait"; }
+  .--responsive-marker::before { content: "tablet, tablet-portrait"; }
 }
 
 /*
@@ -57,7 +58,7 @@ body::before { display: none; }
     display: none !important;
   }
 
-  body::before { content: "tablet, tablet-landscape"; }
+  .--responsive-marker::before { content: "tablet, tablet-landscape"; }
 }
 
 /*
@@ -72,7 +73,7 @@ body::before { display: none; }
     display: none !important;
   }
 
-  body::before { content: "tablet, tablet-portrait, mobile, mobile-landscape"; }
+  .--responsive-marker::before { content: "tablet, tablet-portrait, mobile, mobile-landscape"; }
 }
 
 /*
@@ -87,5 +88,5 @@ body::before { display: none; }
     display: none !important;
   }
 
-  body::before { content: "mobile, mobile-portrait"; }
+  .--responsive-marker::before { content: "mobile, mobile-portrait"; }
 }
