@@ -63,7 +63,7 @@
     "85vh": {"opacity": 1}
   }'>
     <div>
-      <div class="video-wrapper" data-gleit='{
+      <div id="video1" class="video-wrapper" data-gleit='{
         "84vh": {"translateX": "100vw"},
         "85vh": {"opacity": 0, "translateX": "0vw"},
         "90vh": {"opacity": 1},
@@ -71,8 +71,9 @@
         "140vh": {"opacity": 0}
       }'>
         <div class="loading">loading the video ...</div>
-        <!-- TODO: make the proper video and link it -->
-        <iframe width="480" height="276" id="video1" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div id="video1-frame"></div>
+        <img class="thumbnail" src="png/video1-thumbnail.png"/>
+        <img class="button" src="svg/play-video.svg"/>
       </div>
       <br>
       <h3>EXAMPLE: creating a simple password-based authentication backend</h3>
@@ -83,7 +84,7 @@
 
   <section class="dark">
     <div>
-      <div class="video-wrapper" data-gleit='{
+      <div id="video2" class="video-wrapper" data-gleit='{
         "159vw": {"translateX": "100vw"},
         "160vh": {"opacity": 0, "translateX": "0vw"},
         "170vh": {"opacity": 1},
@@ -91,8 +92,9 @@
         "240vh": {"opacity": 0}
       }'>
         <div class="loading">loading the video ...</div>
-        <!-- TODO: make the proper video and link it -->
-        <iframe width="480" height="276" id="video2" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div id="video2-frame"></div>
+        <img class="thumbnail" src="png/video2-thumbnail.png"/>
+        <img class="button" src="svg/play-video.svg"/>
       </div>
       <br>
       <h3>EXAMPLE: debugging code visually in CONNECT platform</h3>
@@ -103,7 +105,7 @@
 
   <section class="dark">
     <div>
-      <div class="video-wrapper" data-gleit='{
+      <div id="video3" class="video-wrapper" data-gleit='{
         "259vh": {"translateX": "100vw"},
         "260vh": {"opacity": 0, "translateX": "0vw"},
         "270vh": {"opacity": 1},
@@ -111,8 +113,9 @@
         "320vh": {"opacity": 0}
       }'>
         <div class="loading">loading the video ...</div>
-        <!-- TODO: make the proper video and link it -->
-        <iframe width="480" height="276" id="video3" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div id="video3-frame"></div>
+        <img class="thumbnail" src="png/video3-thumbnail.png"/>
+        <img class="button" src="svg/play-video.svg"/>
       </div>
       <br>
       <h3 data-gleit='{"310vh": {"opacity": 1}, "330vh": {"opacity": 0}}'>EXAMPLE: inline coding in CONNECT platform</h3>
@@ -132,7 +135,7 @@
           when you represent it in a linear fashion, i.e. text-based representation:
         </p>
         <br><br>
-        <img class="medium" src="svg/text-code.svg" data-gleit='{
+        <img class="medium" src="png/text-code.png" data-gleit='{
           "350vh": {"opacity": 0, "scale": 0.85},
           "390vh": {"opacity": 1}
         }'/>
@@ -145,7 +148,7 @@
           which naturally results in a more intuitive and faster to work with form:
         </p>
         <br><br>
-        <img class="medium" src="svg/visual-code.svg" data-gleit='{
+        <img class="medium" src="png/visual-code.png" data-gleit='{
           "350vh": {"opacity": 0, "scale": 0.85},
           "390vh": {"opacity": 1}
         }'/>
@@ -161,12 +164,12 @@
         "460vh": {"opacity": 0, "scale": 0.8},
         "480vh": {"opacity": 1}
       }'>
-        <img src="svg/d-n-s-shadow.svg"/>
-        <img class="laptop" src="svg/laptop.svg" data-gleit='{
+        <img src="png/d-n-s-shadows.png"/>
+        <img class="laptop" src="png/laptop.png" data-gleit='{
           "460vh": {"translateY": "-156px"},
           "500vh": {"translateY": "0px"}
         }'/>
-        <img class="server" src="svg/server.svg" data-gleit='{
+        <img class="server" src="png/server.png" data-gleit='{
           "460vh": {"translateY": "-96px"},
           "500vh": {"translateY": "0px"}
         }'/>
@@ -252,7 +255,7 @@ platform.node(
 
   <section>
     <div>
-      <img class="hero medium" src="svg/interconnect.svg" data-gleit='{"660vh": {"opacity": 0}, "700vh": {"opacity": 1}}'/>
+      <img class="hero medium" src="png/interconnect.png" data-gleit='{"660vh": {"opacity": 0}, "700vh": {"opacity": 1}}'/>
       <br><div class="spacer"></div>
       <h1>Inter-CONNECT Your Micro-Services</h1>
       <br>
@@ -273,7 +276,7 @@ platform.node(
 
   <section>
     <div>
-      <img class="hero" src="svg/map.svg" title="built in Munich, Germany"/>
+      <img class="hero" src="png/map.png" title="built in Munich, Germany"/>
       <br><br>
       <h1>Interested? Lets Have a Chat!</h1>
       <br>
@@ -294,13 +297,13 @@ platform.node(
 
   <div class="footer">
     <div class="texts">
-      <div class="link"><a href="www.google.com" target="_blank">Login</a></div>
+      <div class="link"><a href="https://deskfront.connect-platform.com/" target="_blank">Login</a></div>
       <div class="separator"></div>
-      <div class="link"><a href="www.google.com" target="_blank">Docs</a></div>
+      <div class="link"><a href="https://medium.com/connect-platform/guides/home" target="_blank">Docs</a></div>
       <div class="separator"></div>
-      <div class="link"><a href="www.google.com" target="_blank">GitHub</a></div>
+      <div class="link"><a href="https://github.com/CONNECT-platform/connect-platform" target="_blank">GitHub</a></div>
       <div class="separator"></div>
-      <div class="link"><a href="www.google.com" target="_blank">Docker</a></div>
+      <div class="link"><a href="https://hub.docker.com/r/loreanvictor/connect-platform/" target="_blank">Docker</a></div>
     </div>
     <div class="icons">
       <a class="icon-link" href="www.google.com" target="_blank">
