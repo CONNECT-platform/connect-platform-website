@@ -31,6 +31,12 @@ function loadYouTubeVideo(id) {
     events: {
       onReady: function(event) {
         wrapper.classList.add('loaded');
+      },
+      onStateChange: function(event) {
+        if (event.data == YT.PlayerState.ENDED) {
+          player.seekTo(0);
+          player.playVideo();
+        }
       }
     }
   });
@@ -58,33 +64,5 @@ function onYouTubeIframeAPIReady() {
 }
 
 (function() {
-  /*
-  var videoUrls = {
-    video1: 'https://www.youtube-nocookie.com/embed/gi3XtmSkCmc?VQ=HD1080&color=white&rel=0&showinfo=1&controls=0&mute=1&loop=1&rel=0',
-    video2: 'https://www.youtube-nocookie.com/embed/ujaxbY5rb1c?VQ=HD1080&color=white&rel=0&showinfo=1&controls=0&mute=1&loop=1&rel=0',
-    video3: 'https://www.youtube-nocookie.com/embed/sF1UKAlwte8?VQ=HD1080&color=white&rel=0&showinfo=1&controls=0&mute=1&loop=1&rel=0'
-  }
-
-  function loadVideo(id) {
-    if (videoUrls[id]) {
-      var frame = document.getElementById(id);
-      if (frame) {
-        if (-1 == navigator.userAgent.indexOf("MSIE")) {
-          frame.src = videoUrls[id];
-        }
-        else {
-          frame.location = videoUrls[id];
-        }
-      }
-    }
-  };
-
-
-  setTimeout(function() {
-    loadVideo('video1');
-    loadVideo('video2');
-    loadVideo('video3');
-  }, 5);
-  */
   setTimeout(loadYouTubeIframeAPI, 5);
 })();

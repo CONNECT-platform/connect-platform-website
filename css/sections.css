@@ -26,6 +26,11 @@ section.dark {
   background-image: url('../svg/carbon-dark.svg');
 }
 
+body.mobile section.dark,
+body.tablet section.dark {
+  background-color: #424242;
+}
+
 .dark {
   color: #ffffff;
 }

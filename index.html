@@ -13,15 +13,17 @@
   <link href="css/codes.css" rel="stylesheet">
   <link href="css/video.css" rel="stylesheet">
   <link href="css/footer.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
 
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
   <script src="js/video.js"></script>
+  <script src="js/responsive.js"></script>
 </head>
 <body>
-  <div class="backdrop" data-gleit='{
+  <div class="backdrop desktop-only" data-gleit='{
     "310vh": {"translateX": "0vw"},
     "350vh": {"translateX": "50vw"},
     "440vh": {"translateX": "50vw"},
@@ -38,7 +40,7 @@
   </div>
 
   <section>
-    <img class="logo-carved"  src="svg/logo.svg" data-gleit='{
+    <img class="logo-carved desktop-only"  src="svg/logo.svg" data-gleit='{
       "0vh": {"scale": 1},
       "78vh": {"opacity": 1, "scale": 5},
       "80vh": {"opacity": 0 }
@@ -52,7 +54,7 @@
         Become faster, less error-prone and more focused.
       </p>
       <br>
-      <div class="scroll"><img class="line" src="svg/scroll.svg"/></div>
+      <div class="scroll desktop-only"><img class="line" src="svg/scroll.svg"/></div>
       <br>
       <a class="button">Start Now</a>
     </div>
@@ -78,7 +80,7 @@
       <br>
       <h3>EXAMPLE: creating a simple password-based authentication backend</h3>
       <br>
-      <div class="scroll"><img class="line" src="svg/scroll.svg"/></div>
+      <div class="scroll desktop-only"><img class="line" src="svg/scroll.svg"/></div>
     </div>
   </section>
 
@@ -99,7 +101,7 @@
       <br>
       <h3>EXAMPLE: debugging code visually in CONNECT platform</h3>
       <br>
-      <div class="scroll"><img class="line" src="svg/scroll.svg"/></div>
+      <div class="scroll desktop-only"><img class="line" src="svg/scroll.svg"/></div>
     </div>
   </section>
 
@@ -120,7 +122,7 @@
       <br>
       <h3 data-gleit='{"310vh": {"opacity": 1}, "330vh": {"opacity": 0}}'>EXAMPLE: inline coding in CONNECT platform</h3>
       <br>
-      <div class="scroll" data-gleit='{"310vh": {"opacity": 1}, "335vh": {"opacity": 0}}'><img class="line" src="svg/scroll.svg"/></div>
+      <div class="scroll desktop-only" data-gleit='{"310vh": {"opacity": 1}, "335vh": {"opacity": 0}}'><img class="line" src="svg/scroll.svg"/></div>
     </div>
   </section>
 
@@ -288,8 +290,8 @@ platform.node(
       <br><div class="spacer"></div><br>
       <div>
         <a class="button secondary">Join Discord</a>
-        <a class="button secondary">Try It Out</a>
-        <a class="button secondary">Read More</a>
+        <a class="button secondary desktop-only">Try It Out</a>
+        <a class="button secondary desktop-only">Read More</a>
       </div>
     </div>
   </section>
@@ -297,13 +299,13 @@ platform.node(
 
   <div class="footer">
     <div class="texts">
-      <div class="link"><a href="https://deskfront.connect-platform.com/" target="_blank">Login</a></div>
-      <div class="separator"></div>
+      <div class="link desktop-only"><a href="https://deskfront.connect-platform.com/" target="_blank">Login</a></div>
+      <div class="separator desktop-only"></div>
       <div class="link"><a href="https://medium.com/connect-platform/guides/home" target="_blank">Docs</a></div>
       <div class="separator"></div>
       <div class="link"><a href="https://github.com/CONNECT-platform/connect-platform" target="_blank">GitHub</a></div>
-      <div class="separator"></div>
-      <div class="link"><a href="https://hub.docker.com/r/loreanvictor/connect-platform/" target="_blank">Docker</a></div>
+      <div class="separator desktop-only"></div>
+      <div class="link desktop-only"><a href="https://hub.docker.com/r/loreanvictor/connect-platform/" target="_blank">Docker</a></div>
     </div>
     <div class="icons">
       <a class="icon-link" href="www.google.com" target="_blank">
