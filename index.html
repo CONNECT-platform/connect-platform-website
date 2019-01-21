@@ -23,6 +23,12 @@
   <script src="js/responsive.js"></script>
 </head>
 <body>
+  <div class="page-loading">
+    <div>
+      <img src="svg/logo.svg"/>
+      <p>loading awesome stuff ...</p>
+    </div>
+  </div>
   <div class="backdrop desktop-only" data-gleit='{
     "310vh": {"translateX": "0vw"},
     "350vh": {"translateX": "50vw"},
@@ -49,7 +55,7 @@
       <h1>Serverless Visual Backend Development</h1>
       <h2>[for developers]</h2>
       <p>
-        Create server-less logical microservices intuitively and efficiently,
+        With <b>CONNECT platform</b>, create server-less logical microservices intuitively and efficiently,
         without compromising the fine control you would get with traditional coding.
         Become faster, less error-prone and more focused.
       </p>
@@ -394,7 +400,13 @@ platform.node(
     //
 
     function onload() {
-      if (document.querySelector('body').classList.contains('desktop')) {
+      var body = document.querySelector('body');
+      setTimeout(function() {
+        body.classList.add('mostly-loaded');
+        setTimeout(function(){ body.classList.add('loaded'); }, 300);
+      }, 500);
+
+      if (body.classList.contains('desktop')) {
         gleit.animate().on(gleit.verticalScroll());
       }
 

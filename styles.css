@@ -1,3 +1,43 @@
+.page-loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: white;
+  z-index: 10000;
+  opacity: 1;
+  background-image: url('svg/carbon.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80vh;
+  transition: opacity .3s;
+}
+
+body.mostly-loaded .page-loading {
+  opacity: 0;
+}
+
+body.loaded .page-loading {
+  display: none;
+}
+
+.page-loading img {
+  width: 128px;
+  transform-origin: center 69px;
+  margin-bottom: 32px;
+  animation: loading-logo 2s infinite;
+}
+
+@keyframes loading-logo {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(720deg); }
+}
+
 img.logo-carved {
   position: fixed;
   padding: 0;
