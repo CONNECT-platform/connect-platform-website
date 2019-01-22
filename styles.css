@@ -61,7 +61,8 @@ img.hero.medium {
   max-height: calc(90vh - 512px);
 }
 
-body.mobile img.hero {
+body.mobile img.hero,
+body.tablet img.hero {
   margin-top: 10vh;
   max-height: none;
   max-width: 80vw;
