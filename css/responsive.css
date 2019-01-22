@@ -3,11 +3,25 @@
 
 /*
   ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
+  ##Screen = 1801px to higher resolutions
+*/
+@media (min-width: 1801px) {
+  .no-xxl, .no-desktop , .laptop-only,
+  .tablet-only, .tablet-portrait-only, .tablet-landscape-only,
+  .mobile-only, .mobile-portrait-only, .mobile-landscape-only {
+    display: none !important;
+  }
+
+  .--responsive-marker::before { content: "desktop, xxl"; }
+}
+
+/*
+  ##Device = Desktops
+  ##Screen = B/w 1441px to 1800px
 */
 
-@media (min-width: 1281px) {
-  .no-desktop , .laptop-only,
+@media (min-width: 1441px) and (max-width: 1800px) {
+  .xxl-only, .no-desktop , .laptop-only,
   .tablet-only, .tablet-portrait-only, .tablet-landscape-only,
   .mobile-only, .mobile-portrait-only, .mobile-landscape-only {
     display: none !important;
@@ -21,8 +35,8 @@
   ##Screen = B/w 1025px to 1280px
 */
 
-@media (min-width: 1025px) and (max-width: 1280px) {
-  .no-desktop , .no-laptop,
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .xxl-only, .no-desktop , .no-laptop,
   .tablet-only, .tablet-portrait-only, .tablet-landscape-only,
   .mobile-only, .mobile-portrait-only, .mobile-landscape-only {
     display: none !important;
@@ -37,7 +51,7 @@
 */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .desktop-only , .laptop-only,
+  .xxl-only, .desktop-only , .laptop-only,
   .no-tablet, .no-tablet-portrait, .tablet-landscape-only,
   .mobile-only, .mobile-portrait-only, .mobile-landscape-only {
     display: none !important;
@@ -52,7 +66,7 @@
 */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  .desktop-only , .laptop-only,
+  .xxl-only, .desktop-only , .laptop-only,
   .no-tablet, .tablet-portrait-only, .no-tablet-landscape,
   .mobile-only, .mobile-portrait-only, .mobile-landscape-only {
     display: none !important;
@@ -67,7 +81,7 @@
 */
 
 @media (min-width: 481px) and (max-width: 767px) {
-  .desktop-only , .laptop-only,
+  .xxl-only, .desktop-only , .laptop-only,
   .no-tablet, .no-tablet-portrait, .tablet-landscape-only,
   .no-mobile, .mobile-portrait-only, .no-mobile-landscape {
     display: none !important;
@@ -82,7 +96,7 @@
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
-  .desktop-only , .laptop-only,
+  .xxl-only, .desktop-only , .laptop-only,
   .tablet-only, .tablet-portrait-only, .tablet-landscape-only,
   .no-mobile, .no-mobile-portrait, .mobile-landscape-only {
     display: none !important;

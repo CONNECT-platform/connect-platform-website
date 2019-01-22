@@ -27,6 +27,10 @@ section.dark {
   background-image: url('../svg/carbon-dark.svg');
 }
 
+body.xxl section>div {
+  padding-bottom: 25vh;
+}
+
 body.mobile section.dark,
 body.tablet section.dark {
   background-color: #424242;

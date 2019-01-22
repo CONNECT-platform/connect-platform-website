@@ -2,7 +2,7 @@
 
 (function() {
   var allClass = [
-    'desktop', 'laptop',
+    'xxl', 'desktop', 'laptop',
     'tablet', 'tablet-portrait', 'tablet-landscape',
     'mobile', 'mobile-portrait', 'mobile-landscape',
   ];

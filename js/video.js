@@ -82,5 +82,6 @@ function onYouTubeIframeAPIReady() {
 }
 
 (function() {
-  setTimeout(loadYouTubeIframeAPI, 200);
+  if (window.addEventListener) window.addEventListener('load', loadYouTubeIframeAPI);
+  else window.attachEvent('load', loadYouTubeIframeAPI);
 })();

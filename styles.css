@@ -53,6 +53,10 @@ img.logo-carved {
   transform-origin: center;
 }
 
+body.xxl img.logo-carved {
+  bottom: calc(342px + 25vh);
+}
+
 img.hero {
   max-height: calc(100vh - 512px);
 }
