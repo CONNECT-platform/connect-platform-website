@@ -15,10 +15,12 @@ function loadYouTubeIframeAPI() {
 }
 
 function loadYouTubeVideo(id) {
+  var body = document.querySelector('body');
   var wrapper = document.getElementById(id);
 
   var player = new YT.Player(id + '-frame', {
     videoId: videoIds[id],
+    suggestedQuality: 'hd1080',
     playerVars: {
       controls: 0,
       loop: 1,
@@ -41,20 +43,36 @@ function loadYouTubeVideo(id) {
     }
   });
 
-  wrapper.addEventListener('click', function() {
+  function click() {
     if (wrapper.classList.contains('active')) {
       wrapper.classList.remove('active');
+
+      /*
+      if (body.classList.contains('mobile-portrait')) {
+        wrapper.style = '';
+      }
+      */
+
       setTimeout(function() {
         player.pauseVideo();
       }, 150);
     }
     else {
       player.playVideo();
+
+      /*
+      if (body.classList.contains('mobile-portrait')) {
+        wrapper.style = 'transform: rotate(90deg) scale(' + (window.innerHeight / window.innerWidth) + ')';
+      }
+      */
+
       setTimeout(function() {
         wrapper.classList.add('active');
       }, 150);
     }
-  });
+  };
+
+  wrapper.addEventListener('click', click);
 }
 
 function onYouTubeIframeAPIReady() {
@@ -64,5 +82,5 @@ function onYouTubeIframeAPIReady() {
 }
 
 (function() {
-  setTimeout(loadYouTubeIframeAPI, 5);
+  setTimeout(loadYouTubeIframeAPI, 200);
 })();

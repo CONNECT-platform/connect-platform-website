@@ -61,6 +61,20 @@ img.hero.medium {
   max-height: calc(90vh - 512px);
 }
 
+body.mobile img.hero {
+  margin-top: 10vh;
+  max-height: none;
+  max-width: 80vw;
+}
+
+body.mobile-landscape img.hero {
+  max-width: 50vw;
+}
+
+img.hero.logo {
+  width: 35vmin;
+}
+
 .backdrop {
   position: fixed;
   left: 0;

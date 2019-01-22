@@ -3,6 +3,7 @@
   top: calc(25vh - 14.2625vw);
   left: 0;
 	right: 0;
+	width: 100vw;
 	padding-bottom: 56.25vw; /* 16:9 */
 	padding-top: 25px;
 	height: 0;
@@ -17,8 +18,19 @@ body.mobile .video-wrapper,
 body.tablet .video-wrapper {
 	position: relative;
 	opacity: 1;
-	margin: 0 -24px;
-	margin-bottom: 27.125vw;
+	margin: -24px;
+	margin-bottom: 0;
+	top: auto;
+	padding-top: 0;
+	z-index: 1;
+}
+
+body.mobile .video-section,
+body.tablet .video-section {
+	display: block;
+	padding-top: 0;
+	margin-top: 0;
+	min-height: auto;
 }
 
 .video-wrapper img {
