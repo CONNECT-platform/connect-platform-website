@@ -48,3 +48,8 @@
 .footer .icons .icon-link::after {
   bottom: -8px;
 }
+
+body.mobile .footer {
+  bottom: 0px;
+  background: #424242;
+}
