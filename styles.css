@@ -122,6 +122,18 @@ img.hero.logo {
   animation: scroll 2s infinite;
 }
 
+.privacy img.logo-carved {
+  position: initial;
+  display: block;
+  margin:50px auto;
+  left: 0;
+}
+
+section.privacy a:hover::after {
+
+  transform: scaleX(0);
+}
+
 @keyframes scroll {
   0% { transform: translateY(0); }
   75% { transform: translateY(16px); }
