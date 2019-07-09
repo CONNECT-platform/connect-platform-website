@@ -130,8 +130,16 @@ img.hero.logo {
 }
 
 section.privacy a:hover::after {
-
   transform: scaleX(0);
+}
+
+section.privacy {
+  text-align: left;
+}
+
+section.privacy h1, section.privacy h2 {
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 @keyframes scroll {
