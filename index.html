@@ -355,6 +355,10 @@ platform.node(
     </div>
   </div>
 
+  <div class="gdpr-popup" id="gdpr">
+    To improve your user experience, this website uses cookies. We assume that you agree, but of course you have the option of opt-out.<div class="gdpr-buttons"><a href="privacy.html" target="_blank">Details</a><a class="button secondary desktop-only" id="gdpr-button">Accept</a></div>
+  </div>
+
   <script>
     //
     // ---------- TODO: REMOVE THIS ----------
@@ -457,6 +461,17 @@ platform.node(
     //
     if (window.addEventListener) window.addEventListener('load', onload);
     else if (window.attachEvent) window.attachEvent('onload', onload);
+
+    var gdprPopup = document.getElementById("gdpr");
+    var gdprPopupButton = document.getElementById("gdpr-button");
+    gdprPopup.addEventListener("click", function() {
+      gdprPopup.classList.add("hide");
+      localStorage.setItem('hideGdpr', true);
+    })
+
+    if(localStorage.getItem('hideGdpr')) {
+      gdprPopup.classList.add("hide");
+    }
   </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140731888-1"></script>
