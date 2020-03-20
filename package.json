@@ -11,6 +11,7 @@
   "scripts": {
     "build-css": "node-sass --include-path scss scss/main.scss css/main.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "build-css-prod": "node-sass --include-path scss scss/main.scss css/main.prod.css --output-style compressed",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

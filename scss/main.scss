@@ -1,5 +1,8 @@
-$badass: #bada55;
-body { 
-  margin: 0; 
-  background-color: $badass; 
-}
+@import 'styles.scss';
+@import 'generic.scss';
+@import 'sections.scss';
+@import 'buttons.scss';
+@import 'codes.scss';
+@import 'video.scss';
+@import 'footer.scss';
+@import 'responsive.scss';
