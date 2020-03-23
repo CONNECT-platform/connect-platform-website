@@ -1,26 +1,28 @@
-section {
-  background-image: url('../svg/carbon.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 80vh;
-  width: 100vw;
-  min-height: 100vh;
-  text-align: center;
+.main-page {
+  section {
+    background-image: url('../svg/carbon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80vh;
+    width: 100vw;
+    min-height: 100vh;
+    text-align: center;
 
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
 
-section:not(:first-child) {
-  z-index: 2;
-}
+  section:not(:first-child) {
+    z-index: 2;
+  }
 
-section>div {
-  padding: 24px;
-  padding-bottom: 170px;
-  position: relative;
+  section > div {
+    padding: 24px;
+    padding-bottom: 170px;
+    position: relative;
+  }
 }
 
 section.dark {
