@@ -14,7 +14,7 @@
 @import 'fonts/nunito.scss';
 
 body.carbon {
-  background-image: url('../svg/carbon.svg');
+  background-image: url('/svg/carbon.svg');
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: -6em;
@@ -31,8 +31,8 @@ body.pricing {
 }
 
 .logo-new {
-  background: url("../img/logo.png") no-repeat;
-  @include image-2x("../img/logo@2x.png", 231px, 303px);
+  background: url("/img/logo.png") no-repeat;
+  @include image-2x("/img/logo@2x.png", 231px, 303px);
 
   width: 231px;
   height: 303px;
