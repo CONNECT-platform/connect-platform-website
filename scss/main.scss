@@ -31,8 +31,8 @@ body.pricing {
 }
 
 .logo-new {
-  background: url("/img/logo.png") no-repeat;
-  @include image-2x("/img/logo@2x.png", 231px, 303px);
+  background: url("/img/logo-connect.png") no-repeat;
+  @include image-2x("/img/logo-connect@2x.png", 231px, 303px);
 
   width: 231px;
   height: 303px;
