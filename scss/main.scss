@@ -774,3 +774,31 @@ label:hover {
   visibility: hidden;
   display: none;
 }
+
+.resident-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-link {
+  display: block;
+
+  &.logo-wayra {
+    background: url("/img/resident/wayra.png") no-repeat center center;
+    background-size: cover;
+    
+    width: 309px;
+    height: 142px;
+
+    margin-right: 100px;
+  }
+
+  &.logo-xpreneurs {
+    background: url("/img/resident/xpreneurs.png") no-repeat;
+    background-size: cover;
+
+    width: 346px;
+    height: 116px;
+  }
+}
